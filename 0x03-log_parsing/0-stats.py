@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-log parsing
+0
 """
 
 import sys
@@ -9,7 +9,7 @@ import re
 
 def output(log: dict) -> None:
     """
-    helper function to display stats
+    output
     """
     print("File size: {}".format(log["file_size"]))
     for code in sorted(log["code_frequency"]):
@@ -37,10 +37,10 @@ if __name__ == "__main__":
                 code = match.group(1)
                 file_size = int(match.group(2))
 
-                # File size
+                # file_size
                 log["file_size"] += file_size
 
-                # status code
+                # code_frequency
                 if (code.isdecimal()):
                     log["code_frequency"][code] += 1
 
